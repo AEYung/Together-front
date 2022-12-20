@@ -1,14 +1,12 @@
-import { Routes, Route } from "react-router-dom";
-import {
-  Main,
-  Signup,
-} from "./Pages";
+import { Routes, Route } from 'react-router-dom';
+import * as P from './Pages';
 
 const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<Main />}/>
-      <Route path="/signup" element={<Signup />}/>
+      <Route path="/" element={<P.MainPageMain />} />
+      <Route path="/*" element={<P.NotFoundPage />} />
+      <Route path="/signup" element={<P.SignupPageSignup />} />
     </Routes>
   );
 };
