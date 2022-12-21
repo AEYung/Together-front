@@ -1,12 +1,21 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 
+export const Backgrond = css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(-60deg, #A0C9D2 50%, #FFFFFF 50%);
+`
+
 export const Positioner = css`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(-60deg, #A0C9D2 50%, #FFFFFF 50%);;
+    width: 21vw;
     height: 100vh;
 `
 
@@ -25,7 +34,7 @@ export const EmailContainer = css`
     display: flex;
     flex-direction: row;
     align-items: center; 
-    margin: 1vw;
+    margin-top: 1vw;
 
     input{
         width: 15vw;
@@ -60,7 +69,15 @@ export const InputStyle = css`
     box-sizing: border-box;
     box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
     padding-left: 1vw;
-    margin: 1vw;
+    margin-top: 1vw;
+`
+
+export const AlertText = css`
+    opacity: 0;
+    color: #E21616;
+    font-size: 13px;
+    align-self: flex-start;
+    margin-top: 5px;
 `
 
 export const ButtonStyle = css`
