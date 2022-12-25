@@ -57,6 +57,7 @@ export const EmailContainer = css`
 		background-color: #41A1B6;
         box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
 		color: #FFFFFF;
+        cursor: pointer;
     }
 `
 
@@ -92,4 +93,5 @@ export const ButtonStyle = css`
     color: white;
     font-size: 19px;
     font-weight: bold;
+    cursor: pointer;
 `

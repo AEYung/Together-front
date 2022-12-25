@@ -62,6 +62,7 @@ export const ButtonStyle = css`
     color: white;
     font-size: 19px;
     font-weight: bold;
+    cursor: pointer;
 `
 
 export const GoToSignup = css`
