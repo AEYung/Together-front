@@ -1,3 +1,9 @@
 export { default as NotFoundImg } from './NotFoundImg';
 export { default as Arrow } from './Arrow';
-export { default as Logo } from './Logo'
+export { default as Logo } from './Logo';
+export { default as OnHeadset } from './onHeadset';
+export { default as OffHeadset } from './offHeadset';
+export { default as OnMic } from './onMic';
+export { default as OffMic } from './offMic';
+export { default as OnVideo } from './onVideo';
+export { default as OffVideo } from './offVideo';
