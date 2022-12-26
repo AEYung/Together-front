@@ -2,7 +2,7 @@
 import { css } from '@emotion/react'
 
 export const Positioner = css`
-    width: 100vw;
+    width: 100%;
     height: 9vh;
     display: flex;
     flex-direction: row;
@@ -11,7 +11,9 @@ export const Positioner = css`
     position: fixed;
     top: 0px;
     left: 0px;
+    background-color: white;
     box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
+    z-index: 99;
 `
 
 export const LogoWrapper = css`
