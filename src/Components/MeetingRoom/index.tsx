@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Link } from 'react-router-dom';
+import ChattingBox from '../ChattingBox';
 import * as S from './style';
 import * as I from '../../Asset/svg';
 import { useState } from 'react';
@@ -9,10 +10,14 @@ export default function MeetingRoom() {
   return (
     <div
       css={css`
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
         background: #f1f1f1;
       `}
     >
       <UserBox />
+      <ChattingBox />
     </div>
   );
 }

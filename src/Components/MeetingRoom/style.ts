@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 export const UserContainer = styled.div`
   width: 70.83vw;
   height: 100vh;
-  margin-left: 1.67vw;
   display: flex;
   flex-direction: column;
   justify-content: center;

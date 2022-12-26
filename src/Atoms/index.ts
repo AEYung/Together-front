@@ -1,22 +1,26 @@
-import { atom } from "recoil"
+import { atom } from 'recoil';
 
 export const emailState = atom({
-    key: "Email",
-    default: "",
-})
+  key: 'Email',
+  default: '',
+});
 export const emailCodeState = atom({
-    key: "EmailCode",
-    default: "",
-})
+  key: 'EmailCode',
+  default: '',
+});
 export const nameState = atom({
-    key: "Name",
-    default: "",
-})
+  key: 'Name',
+  default: '',
+});
 export const passwordState = atom({
-    key: "Password",
-    default: "",
-})
+  key: 'Password',
+  default: '',
+});
 export const repasswordState = atom({
-    key: "Repassword",
-    default: "",
-})
+  key: 'Repassword',
+  default: '',
+});
+export const meetingChatState = atom({
+  key: 'MeetingChat',
+  default: '',
+});
