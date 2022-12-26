@@ -20,6 +20,7 @@ export const Text = styled.div`
   font-size: 1.25rem;
   font-weight: 600;
   align-self: flex-end;
+  user-select: none;
 `;
 
 export const ButtonBox = styled.div`
