@@ -22,15 +22,10 @@ function UserBox() {
   const [headset, setHeadset] = useState<boolean>(false);
   const [video, setVideo] = useState<boolean>(false);
 
-  const clickMic = () => {
-    setMic((prev) => !prev);
-  };
-  const clickHeadset = () => {
-    setHeadset((prev) => !prev);
-  };
-  const clickVideo = () => {
-    setVideo((prev) => !prev);
-  };
+  const clickMic = () => setMic((prev) => !prev);
+  const clickHeadset = () => setHeadset((prev) => !prev);
+  const clickVideo = () => setVideo((prev) => !prev);
+
   return (
     <S.UserContainer>
       <S.UserContainerBox />
