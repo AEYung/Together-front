@@ -42,7 +42,7 @@ export const SubmitButton = styled.input`
 
 export const InputMessage = styled.textarea`
   width: 90%;
-  height: 100%;
+  height: 143px;
   border: none;
   padding: 15px 0 0 15px;
   border-radius: 0 20px;
