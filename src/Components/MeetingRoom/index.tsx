@@ -3,6 +3,8 @@ import { css } from '@emotion/react';
 import { Link } from 'react-router-dom';
 import * as S from './style';
 import * as I from '../../Asset/svg';
+import { useState } from 'react';
+
 export default function MeetingRoom() {
   return (
     <div
@@ -16,6 +18,19 @@ export default function MeetingRoom() {
 }
 
 function UserBox() {
+  const [mic, setMic] = useState<boolean>(false);
+  const [headset, setHeadset] = useState<boolean>(false);
+  const [video, setVideo] = useState<boolean>(false);
+
+  const clickMic = () => {
+    setMic((prev) => !prev);
+  };
+  const clickHeadset = () => {
+    setHeadset((prev) => !prev);
+  };
+  const clickVideo = () => {
+    setVideo((prev) => !prev);
+  };
   return (
     <S.UserContainer>
       <S.UserContainerBox />
@@ -25,14 +40,14 @@ function UserBox() {
         </Link>
       </S.Text>
       <S.ButtonBox>
-        <S.Button>
-          <I.OffMic />
+        <S.Button onClick={clickMic}>
+          {!mic ? <I.OffMic /> : <I.OnMic />}
         </S.Button>
-        <S.Button>
-          <I.OffHeadset />
+        <S.Button onClick={clickHeadset}>
+          {!headset ? <I.OffHeadset /> : <I.OnHeadset />}
         </S.Button>
-        <S.Button>
-          <I.OffVideo />
+        <S.Button onClick={clickVideo}>
+          {!video ? <I.OffVideo /> : <I.OnVideo />}
         </S.Button>
       </S.ButtonBox>
       <S.Text css={{ alignSelf: 'flex-start' }}>참가인원: {'4'}</S.Text>

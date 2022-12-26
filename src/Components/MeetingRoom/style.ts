@@ -27,6 +27,7 @@ export const ButtonBox = styled.div`
   display: flex;
   justify-content: space-between;
   width: 18.7vw;
+  height: 62px;
   margin-top: 9px;
 `;
 export const Button = styled.div`
