@@ -39,7 +39,7 @@ export default function Signin() {
         <div css={S.Backgrond}>
             <div css={S.Positioner}>
                 <div css={S.LogoWrapper}>
-                    <img src={require('../../Asset/logo.png')} alt='logo' />
+                    <Link to="/"><img src={require('../../Asset/logo.png')} alt='logo' /></Link>
                 </div>
                 <input css={S.InputStyle}
                     type="text"

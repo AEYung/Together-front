@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import './style';
 import * as S from './style';
+import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { emailState, emailCodeState, nameState, passwordState, repasswordState } from '../../Atoms';
 
@@ -82,7 +83,7 @@ export default function Signup() {
         <div css={S.Backgrond}>
             <div css={S.Positioner}>
                 <div css={S.LogoWrapper}>
-                    <img src={require('../../Asset/logo.png')} alt='logo' />
+                    <Link to="/"><img src={require('../../Asset/logo.png')} alt='logo' /></Link>
                 </div>
                 <div css={S.EmailContainer}>
                     <input
