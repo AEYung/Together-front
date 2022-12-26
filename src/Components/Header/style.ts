@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
+import { css } from '@emotion/react';
 
 export const Positioner = css`
     width: 100%;
@@ -14,27 +14,26 @@ export const Positioner = css`
     background-color: white;
     box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
     z-index: 99;
-`
+`;
 
 export const LogoWrapper = css`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 3.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 3.5vw;
 
-    img{
-        width: 190px;
-    }
-
-`
+  img {
+    width: 190px;
+  }
+`;
 
 export const NavWrapper = css`
-    font-weight: bold;
-    margin-right: 3.5vw;
-    span{
-        margin-left: 2.5vw;
-    }
-    a{
-        color: black;
-    }
-`
+  font-weight: bold;
+  margin-right: 3.5vw;
+  span {
+    margin-left: 2.5vw;
+  }
+  a {
+    color: black;
+  }
+`;
