@@ -1,5 +1,6 @@
 export { default as NotFoundImg } from './NotFoundImg';
 export { default as Arrow } from './Arrow';
+export { default as Search } from './Search'
 export { default as Logo } from './Logo';
 export { default as OnHeadset } from './onHeadset';
 export { default as OffHeadset } from './offHeadset';
