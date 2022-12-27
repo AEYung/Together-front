@@ -24,3 +24,7 @@ export const meetingChatState = atom({
   key: 'MeetingChat',
   default: '',
 });
+export const toggleBtnState = atom({
+  key: 'ToggleBtn',
+  default: '',
+});
