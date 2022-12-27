@@ -8,6 +8,7 @@ const Router = () => {
       <Route path="/signup" element={<P.SignupPage />} />
       <Route path="/signin" element={<P.SigninPage />} />
       <Route path="/createRoom" element={<P.CreateRoomPage/>} />
+      <Route path="/study-room" element={<P.StudyRoomPage />} />
       <Route path="/meeting-room" element={<P.MeetingRoomPage />} />
       <Route path="/*" element={<P.NotFoundPage />} />
     </Routes>
