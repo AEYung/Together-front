@@ -1,6 +1,4 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
-import { Link } from 'react-router-dom';
 import ChattingBox from '../ChattingBox';
 import * as S from './style';
 import * as I from '../../Asset/svg';

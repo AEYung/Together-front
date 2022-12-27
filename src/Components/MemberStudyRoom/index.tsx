@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import Header from '../Header';
 import * as C from '../';
 import * as S from './style';
@@ -16,12 +17,10 @@ export default function MemberStudyRoom() {
         <C.NoticeBox />
         <C.NoticeBox />
       </S.NoticeContainer>
-      <S.JoinButton
-        onClick={() => {
-          window.location.replace('/meeting-room');
-        }}
-      >
-        회의실 참여
+      <S.JoinButton>
+        <Link to={'/meeting-room'} css={{ color: '#fff' }}>
+          회의실 참여
+        </Link>
       </S.JoinButton>
     </S.Container>
   );
