@@ -30,7 +30,7 @@ export const JoinButton = styled.button`
   border-radius: 25px;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
   background-color: #41a1b6;
-  color: white;
+
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
