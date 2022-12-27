@@ -1,6 +1,7 @@
 import Header from '../Header';
 import * as C from '../';
 import * as S from './style';
+import { Link } from 'react-router-dom';
 
 export default function MemberStudyRoom() {
   return (
@@ -15,6 +16,13 @@ export default function MemberStudyRoom() {
         <C.NoticeBox />
         <C.NoticeBox />
       </S.NoticeContainer>
+      <S.JoinButton
+        onClick={() => {
+          window.location.replace('/meeting-room');
+        }}
+      >
+        회의실 참여
+      </S.JoinButton>
     </S.Container>
   );
 }

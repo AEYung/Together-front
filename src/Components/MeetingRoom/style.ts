@@ -1,5 +1,12 @@
 import styled from '@emotion/styled';
 
+export const Container = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #f1f1f1;
+`;
+
 export const UserContainer = styled.div`
   width: 70.83vw;
   height: 100vh;
@@ -20,6 +27,8 @@ export const Text = styled.div`
   font-weight: 600;
   align-self: flex-end;
   user-select: none;
+  color: #e21616;
+  cursor: pointer;
 `;
 
 export const ButtonBox = styled.div`

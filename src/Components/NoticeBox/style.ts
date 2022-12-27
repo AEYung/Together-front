@@ -25,7 +25,9 @@ export const Contents = styled.div`
   margin-top: 16px;
 `;
 
-export const Coments = styled.div`
+export const Comments = styled.div`
   align-self: flex-end;
+  display: flex;
+  align-content: center;
   margin-top: 9px;
 `;
