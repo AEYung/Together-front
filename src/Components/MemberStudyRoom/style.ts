@@ -1,24 +1,20 @@
 import styled from '@emotion/styled';
 
-export const Background = styled.div`
+export const Container = styled.div`
+  position: relative;
+  display: flex;
   width: 100vw;
   height: 100vh;
+  padding-top: 9vh;
   background: #f6f6f6;
   box-sizing: border-box;
 `;
-export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  padding-top: 13vh;
-  box-sizing: border-box;
-  overflow: scroll;
-`;
 
 export const NoticeContainer = styled.div`
-  justify-self: center;
+  margin: 0 auto;
   width: 54.22vw;
-  height: 85vh;
+  height: 91vh;
   overflow: scroll;
   box-sizing: border-box;
+  padding-top: 4vh;
 `;

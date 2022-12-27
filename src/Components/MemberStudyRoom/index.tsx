@@ -1,22 +1,21 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import Header from '../Header';
-import NoticeBox from '../NoticeBox';
+import * as C from '../';
 import * as S from './style';
 export default function MemberStudyRoom() {
   return (
-    <S.Background>
+    <S.Container>
       <Header />
-      <S.Container>
-        <S.NoticeContainer>
-          <NoticeBox />
-          <NoticeBox />
-          <NoticeBox />
-          <NoticeBox />
-          <NoticeBox />
-          <NoticeBox />
-        </S.NoticeContainer>
-      </S.Container>
-    </S.Background>
+      <C.MemberList />
+      <S.NoticeContainer>
+        <C.NoticeBox />
+        <C.NoticeBox />
+        <C.NoticeBox />
+        <C.NoticeBox />
+        <C.NoticeBox />
+        <C.NoticeBox />
+      </S.NoticeContainer>
+    </S.Container>
   );
 }

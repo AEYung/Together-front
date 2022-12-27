@@ -9,3 +9,5 @@ export { default as MemberStudyRoom } from './MemberStudyRoom';
 
 //components
 export { default as ChattingBox } from './ChattingBox';
+export { default as NoticeBox } from './NoticeBox';
+export { default as MemberList } from './MemberList';
