@@ -9,3 +9,5 @@ export { default as OffMic } from './offMic';
 export { default as OnVideo } from './onVideo';
 export { default as OffVideo } from './offVideo';
 export { default as Comment } from './comment';
+export { default as Copy } from './copy';
+export { default as Setting } from './setting';
