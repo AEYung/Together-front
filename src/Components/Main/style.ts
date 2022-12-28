@@ -57,8 +57,13 @@ export const ButtonStyle = css`
     margin: 1.5vw;
     color: white;
     font-size: 18px;
+    text-align: center;
+    line-height: 5.5vh;
     font-weight: bold;
     cursor: pointer;
+    a{
+        color: white;
+    }
 `
 export const BoxList = css`
     display: grid;

@@ -10,6 +10,7 @@ export const WritingBox = css`
     border-radius: 10px;
     padding: 10px 10px 10px 20px;
     box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 ` 
 
 export const Boxtext = css`

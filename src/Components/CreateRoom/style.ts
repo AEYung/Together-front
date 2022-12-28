@@ -128,6 +128,7 @@ export const ButtonStyle1 = css`
     a{
         color: #41A1B6;
     }
+    cursor: pointer;
 `
 
 export const ButtonStyle2 = css`
@@ -139,10 +140,15 @@ export const ButtonStyle2 = css`
     text-align: center;
     line-height: 5.5vh;
     border-radius: 30px;
+    a{
+        color: #41A1B6;
+    }
+    cursor: pointer;
 `
 
 export const LockBtn = css`
     position: absolute;
     top:12vh;
     right: 34vw;
+    cursor: pointer;
 `

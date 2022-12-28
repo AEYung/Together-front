@@ -32,7 +32,7 @@ function RealNav(props: { isLoggedIn: any; }) {
 export default function Header() {
     return (
         <div css={S.Positioner}>
-            <div css={S.LogoWrapper}><img src={require('../../Asset/logo.png')} alt='logo' /></div>
+            <div css={S.LogoWrapper}><Link to='/'><img src={require('../../Asset/logo.png')} alt='logo' /></Link></div>
             <RealNav isLoggedIn={false} />
         </div>
     );
