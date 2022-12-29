@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import './style';
 import * as S from './style';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { emailState, emailCodeState, nameState, passwordState, repasswordState } from '../../Atoms';
-
+import axios from 'axios';
 
 const TrySignup = () => {
     const [email, setEmail] = useRecoilState(emailState);
@@ -12,35 +12,55 @@ const TrySignup = () => {
     const [name, setName] = useRecoilState(nameState);
     const [password, setPassword] = useRecoilState(passwordState);
     const [repassword, setRePassword] = useRecoilState(repasswordState);
+    const navigate = useNavigate();
 
     const emailCheck = async () => {
-        var emtext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+        var emtext = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 
         if (email === '')
             return alert('이메일이 입력되지 않았습니다.');
         else if (emtext.test(email) === false)
             return alert("이메일형식이 올바르지 않습니다.");
 
-        alert("인증정보를 발송했습니다!");
-        //서버 연결시 추가코드 필요
+        const url = "http://10.82.17.149:8080/auth/mail";
+        await axios.post(url, {
+            email: email,
+        })
+        .then(function(response) {
+            console.log(response.data);
+            alert("인증정보 발송에 성공했습니다!");
+        })
+        .catch(function(error) {
+            console.log(error);
+            alert("인증정보 발송에 실패했습니다!");
+        })
     }
 
     const authCheck = async () => {
         if (emailCode === '')
             return alert('잘못된 이메일코드입니다.');
-        //서버 연결시 추가코드 필요
 
-        alert("인증이 완료되었습니다!");
-        //서버 연결시 추가코드 필요
+        const url = "http://10.82.17.149:8080/auth/mail/verifying";
+        await axios.post(url, {
+            email: email,
+            authCode: emailCode,
+        })
+        .then(function(response) {
+            console.log(response.data);
+            alert("인증에 성공했습니다!");
+        })
+        .catch(function(error) {
+            console.log(error);
+            alert("인증에 실패했습니다!");
+        })
+        
     }
 
     const onSignup = async () => {
-        var pwtext = /^[A-Za-z0-9`~!@#\$%\^&\*\(\)\{\}\[\]\-_=\+\\|;:'"<>,\./\?]{8,20}$/;
+        var pwtext = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
 
         if (email === '')
             return alert('이메일이 입력되지 않았습니다.');
-        else if (emailCode === '')
-            return alert('인증번호가 입력되지 않았습니다.');
         else if (name === '') {
             return alert('이름이 입력되지 않았습니다.');
         }
@@ -48,11 +68,24 @@ const TrySignup = () => {
             return alert('비밀번호가 입력되지 않았습니다.');
         else if (!pwtext.test(password))
             return alert("8~20자 영문 대소문자, 숫자, 특수문자를 사용하세요.");
-        if (password !== repassword)
+        else if (password !== repassword)
             return alert('비밀번호가 서로 일치하지 않습니다.');
 
-        alert('회원가입이 완료되었습니다!');
-        //서버 연결시 추가코드 필요
+        const url = "http://10.82.17.149:8080/auth/signup";
+        await axios.post(url, {
+            email: email,
+            name: name,
+            password: password,
+        })
+        .then(function(response) {
+            console.log(response.data);
+            alert("회원가입에 성공했습니다!");
+            navigate("/signin");
+        })
+        .catch(function(error) {
+            console.log(error);
+            alert("회원가입에 실패했습니다!");
+            })
     };
 
     return {

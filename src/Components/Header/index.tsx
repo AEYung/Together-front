@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import './style';
 import * as S from './style';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function GuestNav() {
     return (
@@ -17,23 +17,28 @@ function UserNav() {
         <div css={S.NavWrapper}>
             <span><Link to="/">홈으로</Link></span>
             <span>마이페이지</span>
-            <span>로그아웃</span>
+            <span onClick={logout}><Link to="/signin">로그아웃</Link></span>
         </div>
     );
 }
 
-function RealNav(props: { isLoggedIn: any; }) {
-    if (props.isLoggedIn) {
-        return <UserNav />;
+const RealNav = () => {
+    const checkAuth = localStorage.getItem("AccessToken");
+    if (checkAuth === null) {
+        return <GuestNav />;
     }
-    return <GuestNav />;
+    return <UserNav />;
+}
+
+const logout = () => {
+    localStorage.clear();
 }
 
 export default function Header() {
     return (
         <div css={S.Positioner}>
-            <div css={S.LogoWrapper}><Link to='/'><img src={require('../../Asset/logo.png')} alt='logo' /></Link></div>
-            <RealNav isLoggedIn={false} />
+            <div css={S.LogoWrapper}><img src={require('../../Asset/logo.png')} alt='logo' /></div>
+            <RealNav />
         </div>
     );
 }
