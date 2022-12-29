@@ -4,21 +4,39 @@ import * as S from './style';
 import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { emailState, passwordState } from '../../Atoms';
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 
 const TrySignin = () => {
     const [email, setEmail] = useRecoilState(emailState);
     const [password, setPassword] = useRecoilState(passwordState);
+    const navigate = useNavigate();
 
     const onSignin = async () => {
-
         if (email === '')
             return alert('이메일이 입력되지 않았습니다.');
         else if (password === '')
             return alert('비밀번호가 입력되지 않았습니다.');
 
-        alert('로그인이 완료되었습니다!');
-        //서버 연결시 추가코드 필요
+        const url = "http://10.82.17.149:8080/auth";
+        await axios.post(url, {
+            email: email,
+            password: password,
+        })
+        .then(function(res) {
+            console.log(res.data);
+            localStorage.setItem('AccessToken', res.data.accessToken);
+            localStorage.setItem('RefreshToken', res.data.refreshToken);
+            localStorage.setItem('expiredTime', res.data.expiredAt);
+            axios.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.accessToken;
+            alert("로그인에 성공했습니다!");
+            navigate("/")
+        })
+        .catch(function(err) {
+            console.log(err);
+            alert("로그인에 실패했습니다.");
+        })
     };
 
     return {
@@ -27,7 +45,6 @@ const TrySignin = () => {
         onSignin
     };
 }
-
 
 export default function Signin() {
     const {
