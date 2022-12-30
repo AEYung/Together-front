@@ -5,13 +5,12 @@ import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { emailState, passwordState } from '../../Atoms';
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import { API } from '../../lib/API';
 
 
 const TrySignin = () => {
     const [email, setEmail] = useRecoilState(emailState);
     const [password, setPassword] = useRecoilState(passwordState);
-    const navigate = useNavigate();
 
     const onSignin = async () => {
         if (email === '')
@@ -24,19 +23,18 @@ const TrySignin = () => {
             email: email,
             password: password,
         })
-        .then(function(res) {
-            console.log(res.data);
-            localStorage.setItem('AccessToken', res.data.accessToken);
-            localStorage.setItem('RefreshToken', res.data.refreshToken);
-            localStorage.setItem('expiredTime', res.data.expiredAt);
-            axios.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.accessToken;
-            alert("로그인에 성공했습니다!");
-            navigate("/")
-        })
-        .catch(function(err) {
-            console.log(err);
-            alert("로그인에 실패했습니다.");
-        })
+            .then(function (res) {
+                localStorage.setItem('AccessToken', res.data.accessToken);
+                localStorage.setItem('RefreshToken', res.data.refreshToken);
+                localStorage.setItem('expiredTime', res.data.expiredAt);
+                API.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.accessToken;
+                alert("로그인에 성공했습니다!");
+                window.location.href = "/"
+            })
+            .catch(function (err) {
+                console.log(err.response.data);
+                alert(err.response.data.msg);
+            })
     };
 
     return {

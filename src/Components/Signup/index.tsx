@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import './style';
 import * as S from './style';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { emailState, emailCodeState, nameState, passwordState, repasswordState } from '../../Atoms';
 import axios from 'axios';
@@ -12,7 +12,6 @@ const TrySignup = () => {
     const [name, setName] = useRecoilState(nameState);
     const [password, setPassword] = useRecoilState(passwordState);
     const [repassword, setRePassword] = useRecoilState(repasswordState);
-    const navigate = useNavigate();
 
     const emailCheck = async () => {
         var emtext = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
@@ -26,14 +25,14 @@ const TrySignup = () => {
         await axios.post(url, {
             email: email,
         })
-        .then(function(response) {
-            console.log(response.data);
-            alert("인증정보 발송에 성공했습니다!");
-        })
-        .catch(function(error) {
-            console.log(error);
-            alert("인증정보 발송에 실패했습니다!");
-        })
+            .then(function (response) {
+                console.log(response.data);
+                alert("인증정보 발송에 성공했습니다!");
+            })
+            .catch(function (error) {
+                console.log(error);
+                alert("인증정보 발송에 실패했습니다!");
+            })
     }
 
     const authCheck = async () => {
@@ -45,15 +44,15 @@ const TrySignup = () => {
             email: email,
             authCode: emailCode,
         })
-        .then(function(response) {
-            console.log(response.data);
-            alert("인증에 성공했습니다!");
-        })
-        .catch(function(error) {
-            console.log(error);
-            alert("인증에 실패했습니다!");
-        })
-        
+            .then(function (response) {
+                console.log(response.data);
+                alert("인증에 성공했습니다!");
+            })
+            .catch(function (error) {
+                console.log(error);
+                alert("인증에 실패했습니다!");
+            })
+
     }
 
     const onSignup = async () => {
@@ -77,14 +76,14 @@ const TrySignup = () => {
             name: name,
             password: password,
         })
-        .then(function(response) {
-            console.log(response.data);
-            alert("회원가입에 성공했습니다!");
-            navigate("/signin");
-        })
-        .catch(function(error) {
-            console.log(error);
-            alert("회원가입에 실패했습니다!");
+            .then(function (res) {
+                console.log(res.data);
+                alert("회원가입에 성공했습니다!");
+                window.location.href = "/signin";
+            })
+            .catch(function (err) {
+                console.log(err.response.data);
+                alert(err.response.data.msg);
             })
     };
 
