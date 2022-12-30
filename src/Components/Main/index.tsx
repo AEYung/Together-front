@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import * as I from '../../Asset/svg';
 import * as S from './style';
 import { useState } from 'react';
-import MainModal from '../Modal/index';
+import MainModal from '../MainModal/index';
 
 export default function Main() {
     const [modalOpen, setModalOpen] = useState(false);

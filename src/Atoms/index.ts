@@ -1,6 +1,5 @@
 import { atom } from 'recoil';
 
-
 export const emailState = atom({
   key: 'Email',
   default: '',
@@ -29,19 +28,3 @@ export const toggleBtnState = atom({
   key: 'ToggleBtn',
   default: '',
 });
-export const titleState = atom({
-  key: 'Title',
-  default: '',
-});
-export const textContentState = atom({
-  key: 'TextContent',
-  default: '',
-});
-export const maxMemberState = atom({
-  key: 'maxMember',
-  default: 0,
-});
-export const userQuestionState = atom({
-  key: 'userQuestion',
-  default: '',
-})
