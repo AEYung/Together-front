@@ -21,7 +21,7 @@ const TrySignup = () => {
         else if (emtext.test(email) === false)
             return alert("이메일형식이 올바르지 않습니다.");
 
-        const url = "http://10.82.17.149:8080/auth/mail";
+        const url = "http://server.gsm-together.com:8080/auth/mail";
         await axios.post(url, {
             email: email,
         })
@@ -39,7 +39,7 @@ const TrySignup = () => {
         if (emailCode === '')
             return alert('잘못된 이메일코드입니다.');
 
-        const url = "http://10.82.17.149:8080/auth/mail/verifying";
+        const url = "http://server.gsm-together.com:8080/auth/mail/verifying";
         await axios.post(url, {
             email: email,
             authCode: emailCode,
@@ -70,7 +70,7 @@ const TrySignup = () => {
         else if (password !== repassword)
             return alert('비밀번호가 서로 일치하지 않습니다.');
 
-        const url = "http://10.82.17.149:8080/auth/signup";
+        const url = "http://server.gsm-together.com:8080/auth/signup";
         await axios.post(url, {
             email: email,
             name: name,

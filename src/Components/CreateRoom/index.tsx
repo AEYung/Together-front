@@ -8,6 +8,7 @@ import lock from '../../Asset/Lock.jpg'
 import unlock from '../../Asset/Unlock.jpg';
 import { API } from '../../lib/API';
 import { useEffect } from 'react';
+import axios from 'axios';
 
 
 const TryPost = () => {
@@ -37,13 +38,7 @@ const TryPost = () => {
             return alert('룸 최대 인원이 지정되지 않았습니다.');
         }
 
-        const url = "http://10.82.17.149:8080/studies";
-        console.log(title);
-        console.log(textContent);
-        console.log(maximum);
-        console.log(scope);
-        console.log(userQuestion);
-        await API.post(url, {
+        await API.post('http://server.gsm-together.com:8080/studies', {
             title: title,
             description: textContent,
             maximum: maximum,
@@ -54,7 +49,7 @@ const TryPost = () => {
             {
                 headers:{
                     Authorization: "Bearer " + localStorage.getItem('AccessToken')
-                }
+                },
             }
         )
             .then(function (response) {

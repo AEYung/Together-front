@@ -17,24 +17,25 @@ const TrySignin = () => {
             return alert('이메일이 입력되지 않았습니다.');
         else if (password === '')
             return alert('비밀번호가 입력되지 않았습니다.');
-
-        const url = "http://10.82.17.149:8080/auth";
-        await axios.post(url, {
-            email: email,
-            password: password,
-        })
-            .then(function (res) {
-                localStorage.setItem('AccessToken', res.data.accessToken);
-                localStorage.setItem('RefreshToken', res.data.refreshToken);
-                localStorage.setItem('expiredTime', res.data.expiredAt);
-                API.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.accessToken;
-                alert("로그인에 성공했습니다!");
-                window.location.href = "/"
+        else {
+            const url = "http://server.gsm-together.com:8080/auth";
+            await axios.post(url, {
+                email: email,
+                password: password,
             })
-            .catch(function (err) {
-                console.log(err.response.data);
-                alert(err.response.data.msg);
-            })
+                .then(function (res) {
+                    localStorage.setItem('AccessToken', res.data.accessToken);
+                    localStorage.setItem('RefreshToken', res.data.refreshToken);
+                    localStorage.setItem('expiredTime', res.data.expiredAt);
+                    API.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.accessToken;
+                    alert("로그인에 성공했습니다!");
+                    window.location.href = "/"
+                })
+                .catch(function (err) {
+                    console.log(err.response.data);
+                    alert(err.response.data.msg);
+                })
+        }
     };
 
     return {
