@@ -12,6 +12,7 @@ export default function HostStudyRoom() {
           <I.Setting />
         </div>
         <CopyInvitationCode />
+        <ApplicationStatus />
       </S.Container>
     </>
   );
@@ -44,6 +45,24 @@ function CopyInvitationCode() {
             <I.Copy />
           </S.CopyButton>
         </S.InvitationCodeBox>
+      </div>
+    </>
+  );
+}
+
+function ApplicationStatus() {
+  return (
+    <>
+      <div
+        css={{ display: 'flex', flexDirection: 'column', marginTop: '8.24vh' }}
+      >
+        <S.Title>신청 현황</S.Title>
+        <S.ApplyBox>
+          <S.Name>JYG</S.Name>
+          <S.Introduce>React, TS, Emotion 공부하고 있습니다.</S.Introduce>
+          <S.DeleteButton>❌</S.DeleteButton>
+          <S.AcceptButton>수락</S.AcceptButton>
+        </S.ApplyBox>
       </div>
     </>
   );

@@ -10,6 +10,10 @@ export default function MemberStudyRoom() {
       <Header />
       <C.MemberList />
       <S.NoticeContainer>
+        {
+          // 유저가 호스트라면?
+          <WriteNoticeBox />
+        }
         <C.NoticeBox />
         <C.NoticeBox />
         <C.NoticeBox />
@@ -17,11 +21,21 @@ export default function MemberStudyRoom() {
         <C.NoticeBox />
         <C.NoticeBox />
       </S.NoticeContainer>
-      <S.JoinButton>
-        <Link to={'/meeting-room'} css={{ color: '#fff' }}>
-          회의실 참여
-        </Link>
-      </S.JoinButton>
+      <Link to={'/meeting-room'}>
+        <S.JoinButton>회의실 참여</S.JoinButton>
+      </Link>
     </S.Container>
+  );
+}
+
+function WriteNoticeBox() {
+  return (
+    <S.NoticeBox>
+      <S.WriteNotice
+        placeholder="공지할 내용을 입력하세요."
+        spellCheck="false"
+      />
+      <S.NoticeButton>등록</S.NoticeButton>
+    </S.NoticeBox>
   );
 }
