@@ -65,9 +65,3 @@ export const ButtonStyle = css`
         color: white;
     }
 `
-export const BoxList = css`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 5vw;
-    grid-row-gap: 2.5vw;
-`

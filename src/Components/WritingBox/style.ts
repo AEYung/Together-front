@@ -46,3 +46,10 @@ export const MemberNum = css`
     right: 1vw;
     color: #41A1B6;
 `
+
+export const BoxList = css`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5vw;
+    grid-row-gap: 2.5vw;
+`
