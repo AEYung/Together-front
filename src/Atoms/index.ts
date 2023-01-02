@@ -44,4 +44,12 @@ export const maxMemberState = atom({
 export const userQuestionState = atom({
   key: 'userQuestion',
   default: '',
+});
+export const postListState = atom({
+  key: 'postList',
+  default: [],
+})
+export const writeDetailState = atom({
+  key: 'writeDetail',
+  default: '',
 })
